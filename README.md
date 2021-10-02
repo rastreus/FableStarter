@@ -1,6 +1,6 @@
 # FableStarter
 
-![Fable Logo](/src/fable_logo.png)
+<img src="src/fable_logo.png" alt="Fable Logo" width="245.8" />
 
 An Elmish F# [Fable](https://fable.io) template that uses [Tailwind](https://tailwindcss.com) for styling and the [Parcel](https://v2.parceljs.org/) bundler.
 
