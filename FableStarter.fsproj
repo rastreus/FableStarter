@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DefineConstants>FABLE_COMPILER</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="./src/fable.ico" />
+    <None Include="./src/fable_logo.png" />
+    <None Include="./src/index.css" />
+    <None Include="./src/index.html" />
+    <None Include="./src/FableLogo.jsx" />
+    <Compile Include="./src/Tailwind.fs" />
+    <Compile Include="./src/App.fs" />
+    <Compile Include="./src/Main.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.Core" Version="5.0.2" />
+    <PackageReference Include="Fable.Core" Version="3.3.1" />
+    <PackageReference Include="Fable.Elmish" Version="3.1.0" />
+    <PackageReference Include="Fable.Browser.DOM" Version="2.5.0" />
+    <PackageReference Include="Fable.React" Version="7.4.2" />
+    <PackageReference Include="Fable.Elmish.React" Version="3.0.1" />
+    <PackageReference Include="Thoth.Json" Version="6.0.0" />
+    <PackageReference Include="Fable.Elmish.Debugger" Version="3.3.0" />
+    <PackageReference Include="Fable.Elmish.Browser" Version="3.0.4" />
+    <PackageReference Include="Fable.Elmish.HMR" Version="4.1.0" />
+    <PackageReference Include="Fable.AST" Version="3.1.1" />
+    <PackageReference Include="Feliz.CompilerPlugins" Version="1.6.0" />
+    <PackageReference Include="Feliz" Version="1.52.0" />
+    <PackageReference Include="Zanaptak.TypedCssClasses" Version="1.0.0" />
+    <PackageReference Include="Fable.Browser.Url" Version="1.0.3" />
+  </ItemGroup>
+</Project>

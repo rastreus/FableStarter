@@ -1,0 +1,10 @@
+# https://github.com/fsprojects/fantomas/blob/master/docs/Documentation.md#ignore-files-fantomasignore
+
+# Ignore Fable files
+.fable/
+
+# Ignore script files
+*.fsx
+
+Tailwind.fs
+Main.fs

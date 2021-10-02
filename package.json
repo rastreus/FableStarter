@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "scripts": {
+    "clean:fable": "dotnet fable clean --yes",
+    "fable": "dotnet fable --noCache --sourceMaps",
+    "css": "tailwind build -i src/index.css -o src/tailwind-generated.css",
+    "dev:fable": "dotnet fable watch --noRestore --sourceMaps",
+    "dev:start": "parcel serve src/index.html",
+    "build": "dotnet fable --noCache && parcel build src/index.html",
+    "prettier": "prettier --write '**/*.{ts,json,md,yml,js,jsx,mdx}'"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-image": "2.0.0-rc.0",
+    "autoprefixer": "^10.3.5",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "parcel": "^2.0.0-rc.0",
+    "postcss": "^8.3.7",
+    "postcss-import": "^14.0.2",
+    "prettier": "^2.4.1",
+    "remotedev": "0.2.9",
+    "tailwindcss": "^2.2.15",
+    "ts2fable": "^0.7.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,json,md,yml,js,mdx}": [
+      "prettier --write"
+    ],
+    "src/**/*.fs": [
+      "dotnet fantomas ./src/**/*.fs"
+    ]
+  }
+}
