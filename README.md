@@ -2,7 +2,7 @@
 
 <img src="src/fable_logo.png" alt="Fable Logo" width="245.8" />
 
-An Elmish F# [Fable](https://fable.io) template that uses [Tailwind](https://tailwindcss.com) for styling and the [Parcel](https://v2.parceljs.org/) bundler.
+An Elmish F# [Fable](https://fable.io) template that uses [Tailwind](https://tailwindcss.com) for styling and the [Parcel](https://parceljs.org) bundler.
 
 ## Install pre-requisites
 
@@ -22,7 +22,7 @@ Run the following commands from the root of the project directory:
 
 3. `dotnet build`
 
-4. `dotnet fable --noRestore --sourceMaps`
+4. `dotnet fable --noCache --sourceMaps`
 
 5. `yarn dev:start`
 
