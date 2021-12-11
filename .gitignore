@@ -14,6 +14,12 @@ bin/*
 obj/*
 testzipfolder/*
 
+# Exclude the dist directory
+dist/*
+
+# Exclude Parcel cache
+.parcel-cache
+
 # Exclude temp nibs and swap files
 *~.nib
 *.swp
@@ -253,6 +259,7 @@ bin/
 packages/
 paket-files/
 node_modules/
+fable_modules/
 release.cmd
 release.sh
 *.orig

@@ -4,11 +4,13 @@
 
 An Elmish F# [Fable](https://fable.io) template that uses [Tailwind](https://tailwindcss.com) for styling and the [Parcel](https://parceljs.org) bundler.
 
+_Updated with Tailwind CSS v3.0. Check out their release [blog post](https://tailwindcss.com/blog/tailwindcss-v3) to learn more._
+
 ## Install pre-requisites
 
 You'll need to install the following pre-requisites in order to use the Fable Starter template:
 
-- [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet/5.0)
+- [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
 - [Node](https://nodejs.org/en/download/)
 - [Yarn](https://classic.yarnpkg.com/lang/en/)
 
