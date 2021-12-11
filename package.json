@@ -3,6 +3,7 @@
   "scripts": {
     "clean:fable": "dotnet fable clean --yes",
     "fable": "dotnet fable --noCache --sourceMaps",
+    "fable:check": "dotnet femto",
     "css": "tailwind build -i src/index.css -o src/tailwind-generated.css",
     "dev:fable": "dotnet fable watch --noRestore --sourceMaps",
     "dev:start": "parcel serve src/index.html",
