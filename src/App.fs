@@ -2,7 +2,6 @@ module App
 
 open Feliz
 open Elmish
-open Tailwind
 
 [<ReactComponent(import = "FableLogo", from = "./FableLogo.jsx")>]
 let FableLogo() = React.imported()
@@ -21,14 +20,14 @@ let update (msg : Msg) (model : Model) : Model * Cmd<Msg> =
 let view (_ : Model) (dispatch : Msg -> unit) =
     Html.div [
         prop.className [
-            tw.``w-full``
-            tw.``h-screen``
-            tw.``bg-fable-blue-500``
-            tw.``dark:bg-fable-blue-900``
-            tw.``flex``
-            tw.``flex-col``
-            tw.``justify-center``
-            tw.``items-center``
+            "w-full"
+            "h-screen"
+            "bg-fable-blue-500"
+            "dark:bg-fable-blue-900"
+            "flex"
+            "flex-col"
+            "justify-center"
+            "items-center"
         ]
         prop.children [
             FableLogo()

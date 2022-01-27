@@ -7,8 +7,6 @@ open Elmish.Debug
 open Elmish.HMR
 #endif
 
-Fable.Core.JsInterop.importSideEffects "./index.css"
-
 Program.mkProgram App.init App.update App.view
 #if DEBUG
 |> Program.withConsoleTrace

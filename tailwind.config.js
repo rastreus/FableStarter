@@ -1,6 +1,5 @@
 module.exports = {
-  purge: ["src/index.html"],
-  darkMode: "media",
+  content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {
       colors: {
@@ -18,14 +17,6 @@ module.exports = {
           900: "#002951",
         },
       },
-    },
-  },
-  variants: {
-    extend: {
-      backgroundColor: ["active"],
-      textColor: ["active"],
-      gradientColorStops: ["active"],
-      opacity: ["active"],
     },
   },
   plugins: [],
