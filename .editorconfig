@@ -8,7 +8,7 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 max_line_length=80
 
-[*.{js,mdx}]
+[*.{js,jsx,mdx}]
 indent_size = 2
 
 [*.fs]

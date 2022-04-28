@@ -6,5 +6,4 @@
 # Ignore script files
 *.fsx
 
-Tailwind.fs
 Main.fs

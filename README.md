@@ -4,7 +4,7 @@
 
 An Elmish F# [Fable](https://fable.io) template that uses [Tailwind](https://tailwindcss.com) for styling and the [Parcel](https://parceljs.org) bundler.
 
-_Updated with Tailwind CSS v3.0. Check out their release [blog post](https://tailwindcss.com/blog/tailwindcss-v3) to learn more._
+_Updated with Tailwind CSS v3. Check out their release [blog post](https://tailwindcss.com/blog/tailwindcss-v3) to learn more._
 
 ## Install pre-requisites
 
@@ -20,15 +20,17 @@ Run the following commands from the root of the project directory:
 
 1. `dotnet tool restore`
 
+2. `dotnet paket install`
+
 2. `yarn install`
 
-3. `dotnet build`
+4. `dotnet build`
 
-4. `dotnet fable --noCache --sourceMaps`
+5. `yarn fable`
 
-5. `yarn dev:start`
+6. `yarn dev:fable`
 
-6. Open your brower to `http://localhost:1234`
+7. Open a brower to `http://localhost:1234`
 
 ## Other Templates
 

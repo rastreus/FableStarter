@@ -2,6 +2,7 @@ module App
 
 open Feliz
 open Elmish
+open Thoth.Json
 
 [<ReactComponent(import = "FableLogo", from = "./FableLogo.jsx")>]
 let FableLogo () = React.imported ()
@@ -9,21 +10,51 @@ let FableLogo () = React.imported ()
 type Model =
     { Text : string
       Count : int }
+    static member Create(text : string, count : int) =
+        { Text = text
+          Count = count }
+    static member Decoder : Decoder<Model> =
+        Decode.object (fun get ->
+            { Text = get.Required.Field "text" Decode.string
+              Count = get.Required.Field "count" Decode.int }
+        )
+    static member Encoder(model : Model) =
+        Encode.object [
+            "text", Encode.string model.Text
+            "count", Encode.int model.Count
+        ]
 
 type Msg =
     | Increase
     | Decrease
+    | InitLoad
+    | InitLoadResult of Result<Model, string>
     | NoOp
 
 let init () : Model * Cmd<Msg> =
-    { Text = "FableStarter"
-      Count = 0 },
-    Cmd.none
+    Model.Create(text = System.String.Empty, count = 0), Cmd.ofMsg InitLoad
+
+let initLoad () : Async<Result<Model, string>> =
+    async {
+        do! Async.Sleep 1000
+        let json =
+            """{"text":"FableStarter","count":5,"unusedField":"notDecoded"}"""
+        let decodeResult =
+            Decode.fromString Model.Decoder json
+        return decodeResult
+    }
 
 let update (msg : Msg) (model : Model) : Model * Cmd<Msg> =
     match msg with
     | Increase -> { model with Count = model.Count + 1 }, Cmd.none
     | Decrease -> { model with Count = model.Count - 1 }, Cmd.none
+    | InitLoad -> model, Cmd.OfAsync.perform initLoad () InitLoadResult
+    | InitLoadResult result ->
+        match result with
+        | Ok newModel -> newModel, Cmd.none
+        | Error error ->
+            printfn $"[InitLoadResult] error: $%s{error}"
+            model, Cmd.none
     | NoOp -> model, Cmd.none
 
 let view (model : Model) (dispatch : Msg -> unit) =
@@ -38,8 +69,12 @@ let view (model : Model) (dispatch : Msg -> unit) =
         prop.children [
             FableLogo()
             Html.div [
-                prop.className
-                    "w-full h-auto flex flex-row justify-center items-center gap-4"
+                prop.classes [
+                    "w-full h-auto"
+                    "flex flex-row"
+                    "justify-center items-center"
+                    "gap-4"
+                ]
                 prop.children [
                     Html.button [
                         prop.classes [
@@ -52,10 +87,7 @@ let view (model : Model) (dispatch : Msg -> unit) =
                         prop.text "-"
                     ]
                     Html.div [
-                        prop.classes [
-                            "text-lg"
-                            "text-black dark:text-white"
-                        ]
+                        prop.className "text-lg text-white font-mono"
                         prop.text (string model.Count)
                     ]
                     Html.button [

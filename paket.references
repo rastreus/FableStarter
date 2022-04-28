@@ -1,0 +1,15 @@
+group FableStarter
+    FSharp.Core
+    Fable.Core
+    Fable.Elmish
+    Fable.Browser.DOM
+    Fable.React
+    Fable.Elmish.React
+    Thoth.Json
+    Fable.Elmish.Debugger
+    Fable.Elmish.Browser
+    Fable.Elmish.HMR
+    Fable.AST
+    Feliz.CompilerPlugins
+    Feliz
+    Fable.Browser.Url

@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    "**/._*": true,
+    "**/*.fs.js.map": true,
+    "**/*.fs.js": true
+  }
+}

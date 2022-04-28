@@ -1,0 +1,22 @@
+version 7.1.5
+source https://www.nuget.org/api/v2
+
+group FableStarter
+    source https://api.nuget.org/v3/index.json
+    framework: net6.0, netstandard2.0, netstandard2.1
+    storage: none
+
+    nuget FSharp.Core = 6.0.3
+    nuget Fable.Core = 3.6.2
+    nuget Fable.Elmish = 3.1.0
+    nuget Fable.Browser.DOM = 2.10.0
+    nuget Fable.React = 7.4.3
+    nuget Fable.Elmish.React = 3.0.1
+    nuget Thoth.Json = 7.0.0
+    nuget Fable.Elmish.Debugger = 3.3.0
+    nuget Fable.Elmish.Browser = 3.0.4
+    nuget Fable.Elmish.HMR = 5.2.0
+    nuget Fable.AST = 3.1.1
+    nuget Feliz.CompilerPlugins = 1.8.0
+    nuget Feliz = 1.62.0
+    nuget Fable.Browser.Url = 1.1.0
