@@ -3,5 +3,6 @@
     "**/._*": true,
     "**/*.fs.js.map": true,
     "**/*.fs.js": true
-  }
+  },
+  "css.customData": [".vscode/css_custom_data.json"]
 }

@@ -2,7 +2,7 @@
 
 <img src="src/fable_logo.png" alt="Fable Logo" width="245.8" />
 
-An Elmish F# [Fable](https://fable.io) template that uses [Tailwind](https://tailwindcss.com) for styling and the [Parcel](https://parceljs.org) bundler.
+An Elmish F# [Fable](https://fable.io) template that uses [Tailwind](https://tailwindcss.com) for styling, the [Vite](https://vitejs.dev) bundler and [Vitest](https://vitest.dev).
 
 _Updated with Tailwind CSS v3. Check out their release [blog post](https://tailwindcss.com/blog/tailwindcss-v3) to learn more._
 
@@ -22,15 +22,19 @@ Run the following commands from the root of the project directory:
 
 2. `dotnet paket install`
 
-2. `yarn install`
+3. `yarn install`
 
 4. `dotnet build`
 
-5. `yarn fable`
+5. `yarn dev:fable`
 
-6. `yarn dev:fable`
+6. Open a brower to `http://localhost:3000`
 
-7. Open a brower to `http://localhost:1234`
+## Running Tests
+
+While running both Fable and Vite in watch mode, tests can be run by Vitest in its watch mode. Open a separate terminal instance and run `yarn test`.
+
+Check out [Fable.Expect](https://github.com/fable-compiler/Fable.Expect) and [Fable.Mocha](https://github.com/Zaid-Ajaj/Fable.Mocha) to learn more about defining tests.
 
 ## Other Templates
 

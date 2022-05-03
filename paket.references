@@ -13,3 +13,5 @@ group FableStarter
     Feliz.CompilerPlugins
     Feliz
     Fable.Browser.Url
+    Fable.Promise
+    Fable.Expect
