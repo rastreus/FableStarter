@@ -16,7 +16,13 @@ You'll need to install the following pre-requisites in order to use the Fable St
 
 ## Getting Started with FableStarter
 
+Use [degit](https://github.com/Rich-Harris/degit) to set up the template:
+
+`npx degit rastreus/FableStarter <your project name>`
+
 Run the following commands from the root of the project directory:
+
+0. `cd <your project name>`
 
 1. `dotnet tool restore`
 
@@ -32,7 +38,7 @@ Run the following commands from the root of the project directory:
 
 ## Running Tests
 
-While running both Fable and Vite in watch mode, tests can be run by Vitest in its watch mode. Open a separate terminal instance and run `yarn test`.
+Tests can be run by Vitest in its watch mode. Open a separate terminal instance and run `yarn test`.
 
 Check out [Fable.Expect](https://github.com/fable-compiler/Fable.Expect) and [Fable.Mocha](https://github.com/Zaid-Ajaj/Fable.Mocha) to learn more about defining tests.
 
