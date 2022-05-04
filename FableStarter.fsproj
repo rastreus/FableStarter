@@ -11,6 +11,7 @@
     <None Include="./src/index.html" />
     <None Include="./src/FableLogo.jsx" />
     <Compile Include="./src/components/Count/Count.fs" />
+    <Compile Include="./src/components/Count/Count.stories.fs" />
     <Compile Include="./src/components/Count/Count.test.fs" />
     <Compile Include="./src/App.fs" />
     <Compile Include="./src/Main.fs" />

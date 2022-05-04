@@ -6,4 +6,11 @@
 # Ignore script files
 *.fsx
 
+# Ignore compiled files
+obj/
+bin/
+
 Main.fs
+
+# Ignore Test files
+Count.test.fs

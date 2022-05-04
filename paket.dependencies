@@ -22,3 +22,4 @@ group FableStarter
     nuget Fable.Browser.Url = 1.1.0
     nuget Fable.Promise = 3.1.3
     nuget Fable.Expect = 1.1.1
+    nuget Feliz.UseElmish = 1.6.0

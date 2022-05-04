@@ -2,7 +2,7 @@
 
 <img src="src/fable_logo.png" alt="Fable Logo" width="245.8" />
 
-An Elmish F# [Fable](https://fable.io) template that uses [Tailwind](https://tailwindcss.com) for styling, the [Vite](https://vitejs.dev) bundler and [Vitest](https://vitest.dev).
+An Elmish F# [Fable](https://fable.io) template which uses [Tailwind](https://tailwindcss.com) for styling, the [Vite](https://vitejs.dev) bundler, the [Vitest](https://vitest.dev) test runner and [Storybook](https://storybook.js.org) for [Component-Driven Development](https://www.componentdriven.org) (CDD).
 
 _Updated with Tailwind CSS v3. Check out their release [blog post](https://tailwindcss.com/blog/tailwindcss-v3) to learn more._
 
@@ -18,7 +18,9 @@ You'll need to install the following pre-requisites in order to use the Fable St
 
 Use [degit](https://github.com/Rich-Harris/degit) to set up the template:
 
-`npx degit rastreus/FableStarter <your project name>`
+```bash
+npx degit rastreus/FableStarter <your project name>
+```
 
 Run the following commands from the root of the project directory:
 
@@ -40,7 +42,21 @@ Run the following commands from the root of the project directory:
 
 Tests can be run by Vitest in its watch mode. Open a separate terminal instance and run `yarn test`.
 
-Check out [Fable.Expect](https://github.com/fable-compiler/Fable.Expect) and [Fable.Mocha](https://github.com/Zaid-Ajaj/Fable.Mocha) to learn more about defining tests.
+Check out [Fable.Expect](https://github.com/fable-compiler/Fable.Expect) to learn more about defining tests.
+
+More testing resources:
+
+- [Testing documentation](https://fable.io/docs/your-fable-project/testing.html)
+- [Fable.Jester](https://github.com/Shmew/Fable.Jester)
+- [Fable.Mocha](https://github.com/Zaid-Ajaj/Fable.Mocha)
+
+## Running Storybook
+
+Similar to tests, Storybook can run in its watch mode in a separate terminal instance with `yarn storybook`.
+
+Check out the [Storybook Docs](https://storybook.js.org/docs/react/get-started/introduction) and their [Storybook for React tutorial](https://storybook.js.org/tutorials/intro-to-storybook/react/en/get-started/) to learn more about writing stories for components.
+
+---
 
 ## Other Templates
 

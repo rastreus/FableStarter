@@ -2,7 +2,6 @@ module App
 
 open Feliz
 open Elmish
-open Components
 
 [<ReactComponent(import = "FableLogo", from = "./FableLogo.jsx")>]
 let FableLogo () = React.imported ()
@@ -16,7 +15,8 @@ type Msg =
     | NoOp
 
 let init () : Model * Cmd<Msg> =
-    let countModel, countCmd = Count.init()
+    let countModel, countCmd =
+        Count.init ()
     { Text = "FableStarter"
       CountModel = countModel },
     Cmd.batch [
@@ -30,8 +30,7 @@ let update (msg : Msg) (model : Model) : Model * Cmd<Msg> =
         | _ ->
             let newCountModel, countCmd =
                 Count.update countMsg model.CountModel
-            { model with CountModel = newCountModel },
-            Cmd.map CountMsg countCmd
+            { model with CountModel = newCountModel }, Cmd.map CountMsg countCmd
     | NoOp -> model, Cmd.none
 
 let view (model : Model) (dispatch : Msg -> unit) : Fable.React.ReactElement =
@@ -45,6 +44,6 @@ let view (model : Model) (dispatch : Msg -> unit) : Fable.React.ReactElement =
         ]
         prop.children [
             FableLogo()
-            Count.CountComponent model.CountModel (CountMsg >> dispatch)
+            Count.view model.CountModel (CountMsg >> dispatch)
         ]
     ]

@@ -11,7 +11,7 @@ export default defineConfig({
   test: {
     include: ["**/*.test.fs.js"],
     globals: true,
-    environment: "jsdom"
+    environment: "jsdom",
   },
   resolve: {
     alias: {
