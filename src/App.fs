@@ -43,7 +43,10 @@ let view (model : Model) (dispatch : Msg -> unit) : Fable.React.ReactElement =
             "gap-4"
         ]
         prop.children [
-            FableLogo()
-            Count.view model.CountModel (CountMsg >> dispatch)
+            // https://github.com/Zaid-Ajaj/Feliz/blob/ba7b03cbc07e4ce0375809f925273427fad640f5/public/Feliz/React/StrictMode.md
+            React.strictMode [
+                FableLogo()
+                Count.view model.CountModel (CountMsg >> dispatch)
+            ]
         ]
     ]

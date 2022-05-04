@@ -62,15 +62,16 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index --again"
     }
   },
   "lint-staged": {
-    "**/*.{ts,tsx,json,md,yml,js,jsx,mdx}": [
+    "**/*.{ts,tsx,json,yml,js,jsx,mdx}": [
       "prettier --write"
     ],
-    "src/**/*.fs": [
-      "dotnet fantomas ./src/**/*.fs"
+    "**/*.fs": [
+      "dotnet fantomas"
     ]
   }
 }
