@@ -31,3 +31,16 @@ describe "Count" <| fun () ->
         container.Model.Count
         |> Expect.equal 1
     }
+
+    it "Decrease count" <| fun () -> promise {
+        use! container =
+            Program.mkProgram init update view
+            |> Program.mountAndTest mount
+
+        let el = container.El
+
+        el.getButton(decreaseCountButton).click()
+
+        container.Model.Count
+        |> Expect.equal -1
+    }
