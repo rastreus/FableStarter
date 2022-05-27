@@ -6,8 +6,8 @@ group FableStarter
     framework: net6.0, netstandard2.0, netstandard2.1
     storage: none
 
-    nuget FSharp.Core = 6.0.3
-    nuget Fable.Core = 3.6.2
+    nuget FSharp.Core = 6.0.4
+    nuget Fable.Core = 3.7.1
     nuget Fable.Elmish = 3.1.0
     nuget Fable.Browser.DOM = 2.10.0
     nuget Fable.React = 7.4.3
@@ -17,8 +17,8 @@ group FableStarter
     nuget Fable.Elmish.Browser = 3.0.4
     nuget Fable.Elmish.HMR = 5.2.0
     nuget Fable.AST = 3.1.1
-    nuget Feliz.CompilerPlugins = 1.8.0
-    nuget Feliz = 1.62.0
+    nuget Feliz.CompilerPlugins = 1.9.0
+    nuget Feliz = 1.64.0
     nuget Fable.Browser.Url = 1.1.0
     nuget Fable.Promise = 3.1.3
     nuget Fable.Expect = 1.1.1
