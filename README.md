@@ -62,7 +62,8 @@ Check out the [Storybook Docs](https://storybook.js.org/docs/react/get-started/i
 
 If this template isn't what you're wanting, there are other templates. Some only set up a frontend Fable project and then others are full-stack web app templates that include a F# backend:
 
-- [fable/compiler/fable-templates](https://github.com/fable-compiler/fable-templates)
+- [MangelMaxime/template-gitpod-fable-3-vite-react](https://github.com/MangelMaxime/template-gitpod-fable-3-vite-react)
+- [fable-compiler/fable-templates](https://github.com/fable-compiler/fable-templates)
 - [albertwoo/FablePlayground](https://github.com/albertwoo/FablePlayground)
 - [Bjorn-Strom/elmish-fss-template](https://github.com/Bjorn-Strom/elmish-fss-template)
 - [SAFE-Stack/SAFE-template](https://github.com/SAFE-Stack/SAFE-template)
