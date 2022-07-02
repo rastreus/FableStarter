@@ -33,7 +33,7 @@ NUGET
     Fable.Elmish (3.1)
       Fable.Core (>= 3.0)
       FSharp.Core (>= 4.6.2)
-    Fable.Elmish.Browser (3.0.4)
+    Fable.Elmish.Browser (3.0.5)
       Fable.Browser.Dom (>= 1.0)
       Fable.Core (>= 3.0)
       Fable.Elmish (>= 3.0)

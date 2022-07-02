@@ -14,7 +14,7 @@ group FableStarter
     nuget Fable.Elmish.React = 3.0.1
     nuget Thoth.Json = 7.0.0
     nuget Fable.Elmish.Debugger = 3.3.0
-    nuget Fable.Elmish.Browser = 3.0.4
+    nuget Fable.Elmish.Browser = 3.0.5
     nuget Fable.Elmish.HMR = 5.2.0
     nuget Fable.AST = 3.1.1
     nuget Feliz.CompilerPlugins = 1.9.0
