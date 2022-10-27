@@ -4,7 +4,8 @@
 
 An Elmish F# [Fable](https://fable.io) template which uses [Tailwind](https://tailwindcss.com) for styling, the [Vite](https://vitejs.dev) bundler, the [Vitest](https://vitest.dev) test runner and [Storybook](https://storybook.js.org) for [Component-Driven Development](https://www.componentdriven.org) (CDD).
 
-_Updated with Tailwind CSS v3. Check out their release [blog post](https://tailwindcss.com/blog/tailwindcss-v3) to learn more._
+* Uses [Fable.Remoting](https://zaid-ajaj.github.io/Fable.Remoting/#/) with [Saturn](https://saturnframework.org/explanations/overview.html)
+* Inspired by [RedwoodJS File Structure](https://redwoodjs.com/docs/tutorial/chapter1/file-structure)
 
 ## Install pre-requisites
 
