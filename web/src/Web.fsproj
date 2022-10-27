@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <DefineConstants>FABLE_COMPILER</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="./paket.references" />
+    <None Include="./fable.ico" />
+    <None Include="./fable_logo.png" />
+    <None Include="./index.css" />
+    <None Include="./index.html" />
+    <None Include="./FableLogo.jsx" />
+    <Compile Include="./Api.fs" />
+    <Compile Include="./components/Count/Count.fs" />
+    <Compile Include="./components/Count/Count.stories.fs" />
+    <Compile Include="./components/Count/Count.test.fs" />
+    <Compile Include="./App.fs" />
+    <Compile Include="./Main.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../shared/src/Shared.fsproj" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

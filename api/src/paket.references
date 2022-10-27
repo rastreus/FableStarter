@@ -1,0 +1,8 @@
+group Api
+    FSharp.Core
+    Fable.Remoting.Giraffe
+    Giraffe
+    Saturn
+    Serilog.AspNetCore
+    Serilog.Sinks.Console
+    FSharp.Data.LiteralProviders

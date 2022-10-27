@@ -32,11 +32,15 @@ Run the following commands from the root of the project directory:
 
 3. `yarn install`
 
-4. `dotnet build`
+4. `dotnet build shared/src/Shared.fsproj`
 
-5. `yarn dev:fable`
+5. `dotnet build api/src/Api./fsproj`
 
-6. Open a brower to `http://localhost:3000`
+6. `dotnet run --project api/src/Api.fsproj`
+
+7. `yarn dev:fable`
+
+8. Open a brower to `http://localhost:5173`
 
 ## Running Tests
 

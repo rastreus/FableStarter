@@ -1,4 +1,4 @@
-group FableStarter
+group Web
     FSharp.Core
     Fable.Core
     Fable.Elmish
@@ -16,3 +16,4 @@ group FableStarter
     Fable.Promise
     Fable.Expect
     Feliz.UseElmish
+    Fable.Remoting.Client

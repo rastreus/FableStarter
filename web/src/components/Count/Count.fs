@@ -3,53 +3,49 @@ module Count
 open Feliz
 open Feliz.UseElmish
 open Elmish
-open Thoth.Json
 
 type Model =
-    { Count : int }
-    static member Create(count : int) = { Count = count }
-    static member Decoder : Decoder<Model> =
-        Decode.object (fun get ->
-            { Count = get.Required.Field "count" Decode.int }
-        )
-    static member Encoder(model : Model) =
-        Encode.object [
-            "count", Encode.int model.Count
-        ]
+    { Count : int
+      IsLoading : bool }
+    static member Create(count : int, ?isLoading : bool) =
+        { Count = count
+          IsLoading = defaultArg isLoading false }
 
 type Msg =
     | Increase
     | Decrease
-    | InitLoad
-    | InitLoadResult of Result<Model, string>
+    | GetCountSuccess of Result<int, exn>
+    | GetCountFailure of exn
 
 let init () : Model * Cmd<Msg> =
     Model.Create(count = 0), Cmd.none
 
 let initWithCount (count : int) : Model * Cmd<Msg> =
-    Model.Create(count = count), Cmd.none
+    Model.Create(count), Cmd.none
 
-let initLoad () : Async<Result<Model, string>> =
-    async {
-        do! Async.Sleep 1000
-        let json =
-            """{"count":0,"unusedField":"notDecoded"}"""
-        let decodeResult =
-            Decode.fromString Model.Decoder json
-        return decodeResult
-    }
+let initWithModel (model : Model) : Model * Cmd<Msg> =
+    model, Cmd.none
+
+let getCountCmd : Cmd<Msg> =
+    Cmd.OfAsync.either Api.remoting.GetCount () GetCountSuccess GetCountFailure
+
+let initLoad () : Model * Cmd<Msg> =
+    Model.Create(count = 0, isLoading = true), getCountCmd
 
 let update (msg : Msg) (model : Model) : Model * Cmd<Msg> =
     match msg with
     | Increase -> { model with Count = model.Count + 1 }, Cmd.none
     | Decrease -> { model with Count = model.Count - 1 }, Cmd.none
-    | InitLoad -> model, Cmd.OfAsync.perform initLoad () InitLoadResult
-    | InitLoadResult result ->
+    | GetCountSuccess result ->
         match result with
-        | Ok newModel -> newModel, Cmd.none
+        | Ok count -> { model with Count = count; IsLoading = false }, Cmd.none
         | Error error ->
-            printfn $"[InitLoadResult] error: $%s{error}"
-            model, Cmd.none
+            printfn $"[GetCountSuccess] error: $%s{error.Message}"
+            { model with Count = 0; IsLoading = false }, Cmd.none
+    | GetCountFailure exn ->
+        printfn $"[GetCountFailure] exn: $%s{exn.Message}"
+        { model with Count = 0; IsLoading = false }, Cmd.none
+
 
 let increaseCountButton =
     "Increase count"
@@ -61,18 +57,18 @@ type Count =
     [<ReactComponent>]
     static member CountComponent
         (
-            ?modelOpt : {| Count : int |},
+            ?modelOpt : {| Count : int; IsLoading : bool |},
             ?dispatchOpt : Msg -> unit
         ) : Fable.React.ReactElement =
         let innerModel, innerDispatch =
             match modelOpt, dispatchOpt with
-            | Some model, Some dispatch -> Model.Create(model.Count), dispatch
+            | Some model, Some dispatch -> Model.Create(model.Count, model.IsLoading), dispatch
             | None, Some dispatch -> Model.Create(0), dispatch
             | Some model, None ->
                 React.useElmish (
-                    initWithCount model.Count,
+                    initWithModel <| Model.Create(model.Count, model.IsLoading),
                     update,
-                    [| box model.Count |]
+                    [| box model.Count; box model.IsLoading |]
                 )
             | None, None -> React.useElmish (initWithCount 0, update, [||])
         Html.div [
@@ -91,16 +87,27 @@ type Count =
                         "bg-fable-blue-100 dark:bg-fable-blue-600"
                         "rounded-full"
                     ]
+                    prop.disabled innerModel.IsLoading
                     prop.onClick (fun _ -> Decrease |> innerDispatch)
                     prop.text "-"
                 ]
-                Html.div [
-                    prop.classes [
-                        "text-lg font-mono"
-                        "text-black dark:text-fable-blue-400"
+                if innerModel.IsLoading then
+                    Html.button [
+                        prop.classes [
+                            "btn btn-circle loading"
+                            "bg-fable-blue-400 dark:bg-fable-blue-800"
+                        ]
+                        prop.onClick (fun _ -> ())
+                        prop.text System.String.Empty
                     ]
-                    prop.text (string innerModel.Count)
-                ]
+                else
+                    Html.div [
+                        prop.classes [
+                            "text-lg font-mono"
+                            "text-black dark:text-fable-blue-400"
+                        ]
+                        prop.text (string innerModel.Count)
+                    ]
                 Html.button [
                     prop.ariaLabel increaseCountButton
                     prop.classes [
@@ -109,6 +116,7 @@ type Count =
                         "bg-fable-blue-100 dark:bg-fable-blue-600"
                         "rounded-full"
                     ]
+                    prop.disabled innerModel.IsLoading
                     prop.onClick (fun _ -> Increase |> innerDispatch)
                     prop.text "+"
                 ]
@@ -116,4 +124,4 @@ type Count =
         ]
 
 let view (model : Model) (dispatch : Msg -> unit) : Fable.React.ReactElement =
-    Count.CountComponent({| Count = model.Count |}, dispatch)
+    Count.CountComponent({| Count = model.Count; IsLoading = model.IsLoading |}, dispatch)

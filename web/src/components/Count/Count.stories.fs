@@ -12,4 +12,4 @@ let defaultExport =
 exportDefault defaultExport
 
 let Five () =
-    Count.CountComponent({| Count = 5 |})
+    Count.CountComponent({| Count = 5; IsLoading = false |})

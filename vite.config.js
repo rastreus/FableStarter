@@ -13,6 +13,21 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
   },
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5178',
+        changeOrigin: true,
+      },
+      '/socket/**': {
+        target: 'http://localhost:5178',
+        ws: true
+      }
+    },
+    open: false
+  },
   resolve: {
     alias: {
       // This Rollup aliases are extracted from @esbuild-plugins/node-modules-polyfill,

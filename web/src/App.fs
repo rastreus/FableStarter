@@ -16,7 +16,7 @@ type Msg =
 
 let init () : Model * Cmd<Msg> =
     let countModel, countCmd =
-        Count.init ()
+        Count.initLoad ()
     { Text = "FableStarter"
       CountModel = countModel },
     Cmd.batch [
