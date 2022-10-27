@@ -1,6 +1,6 @@
 # FableStarter
 
-<img src="src/fable_logo.png" alt="Fable Logo" width="245.8" />
+<img src="web/src/fable_logo.png" alt="Fable Logo" width="245.8" />
 
 An Elmish F# [Fable](https://fable.io) template which uses [Tailwind](https://tailwindcss.com) for styling, the [Vite](https://vitejs.dev) bundler, the [Vitest](https://vitest.dev) test runner and [Storybook](https://storybook.js.org) for [Component-Driven Development](https://www.componentdriven.org) (CDD).
 
