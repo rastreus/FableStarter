@@ -1,6 +1,6 @@
 # FableStarter
 
-<img src="web/src/fable_logo.png" alt="Fable Logo" width="245.8" />
+<img src="web/src/components/FableLogo/fable_logo.png" alt="Fable Logo" width="245.8" />
 
 An Elmish F# [Fable](https://fable.io) template which uses [Tailwind](https://tailwindcss.com) for styling, the [Vite](https://vitejs.dev) bundler, the [Vitest](https://vitest.dev) test runner and [Storybook](https://storybook.js.org) for [Component-Driven Development](https://www.componentdriven.org) (CDD).
 
@@ -67,6 +67,7 @@ Check out the [Storybook Docs](https://storybook.js.org/docs/react/get-started/i
 
 If this template isn't what you're wanting, there are other templates. Some only set up a frontend Fable project and then others are full-stack web app templates that include a F# backend:
 
+- [MangelMaxime/fable4-vite-feliz-remotedev-elmish-example](https://github.com/MangelMaxime/fable4-vite-feliz-remotedev-elmish-example)
 - [MangelMaxime/template-gitpod-fable-3-vite-react](https://github.com/MangelMaxime/template-gitpod-fable-3-vite-react)
 - [fable-compiler/fable-templates](https://github.com/fable-compiler/fable-templates)
 - [albertwoo/FablePlayground](https://github.com/albertwoo/FablePlayground)
