@@ -12,9 +12,12 @@
     <None Include="./index.html" />
     <None Include="./FableLogo.jsx" />
     <Compile Include="./Api.fs" />
+    <Compile Include="./Helpers.fs" />
+    <Compile Include="./components/Count/Count.elmish.fs" />
     <Compile Include="./components/Count/Count.fs" />
     <Compile Include="./components/Count/Count.stories.fs" />
-    <Compile Include="./components/Count/Count.test.fs" />
+    <Compile Include="./components/FableLogo/FableLogo.fs" />
+    <Compile Include="./App.elmish.fs" />
     <Compile Include="./App.fs" />
     <Compile Include="./Main.fs" />
   </ItemGroup>

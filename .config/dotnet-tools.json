@@ -3,15 +3,15 @@
   "isRoot": true,
   "tools": {
     "fable": {
-      "version": "3.7.16",
+      "version": "4.0.0-theta-018",
       "commands": ["fable"]
     },
     "paket": {
-      "version": "7.1.5",
+      "version": "7.2.0",
       "commands": ["paket"]
     },
     "femto": {
-      "version": "0.13.0",
+      "version": "0.17.1",
       "commands": ["femto"]
     },
     "fantomas-tool": {

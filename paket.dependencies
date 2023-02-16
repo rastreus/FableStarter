@@ -1,4 +1,4 @@
-version 7.1.5
+version 7.2.0
 source https://www.nuget.org/api/v2
 
 group Web
@@ -6,41 +6,42 @@ group Web
     framework: net6.0, netstandard2.0, netstandard2.1
     storage: none
 
-    nuget FSharp.Core = 6.0.6
-    nuget Fable.Core = 3.7.1
-    nuget Fable.Elmish = 3.1.0
-    nuget Fable.Browser.DOM = 2.10.1
-    nuget Fable.React = 7.4.3
-    nuget Fable.Elmish.React = 3.0.1
-    nuget Thoth.Json = 7.0.0
-    nuget Fable.Elmish.Debugger = 3.3.0
-    nuget Fable.Elmish.Browser = 3.0.5
-    nuget Fable.Elmish.HMR = 5.2.0
-    nuget Fable.AST = 3.1.1
-    nuget Feliz.CompilerPlugins = 1.10.0
-    nuget Feliz = 1.68.0
-    nuget Fable.Browser.Url = 1.1.0
+    nuget FSharp.Core = 6.0.7
+    nuget Fable.Core = 4.0.0-theta-007
+    nuget Fable.Elmish = 4.0.1
+    nuget Fable.Browser.DOM = 2.14.0
+    nuget Fable.React = 9.2.0
+    nuget Fable.Elmish.React = 4.0.0
+    nuget Thoth.Json = 10.0.0
+    nuget Fable.Elmish.Debugger = 4.0.0
+    nuget Fable.Elmish.Browser = 4.0.1
+    nuget Fable.Elmish.HMR = 7.0.0
+    nuget Fable.AST = 4.2.1
+    nuget Feliz.CompilerPlugins = 2.0.0
+    nuget Feliz = 2.4.0
+    nuget Fable.Browser.Url = 1.3.2
     nuget Fable.Promise = 3.2.0
     nuget Fable.Expect = 1.1.1
-    nuget Feliz.UseElmish = 1.6.0
-    nuget Fable.Remoting.Client = 7.21.0
+    nuget Feliz.UseElmish = 2.3.0
+    nuget Fable.Remoting.Client = 7.25.0
 
 group Shared
     source https://api.nuget.org/v3/index.json
     framework: net6.0, netstandard2.0, netstandard2.1
     storage: none
 
-    nuget FSharp.Core == 6.0.6
+    nuget FSharp.Core == 6.0.7
 
 group Api
     source https://api.nuget.org/v3/index.json
     framework: net6.0, netstandard2.0, netstandard2.1
     storage: none
 
-    nuget FSharp.Core == 6.0.6
-    nuget Fable.Remoting.Giraffe = 5.13.0
+    nuget FSharp.Core == 6.0.7
+    nuget Microsoft.AspNetCore.Authentication.JwtBearer == 6.0.14
+    nuget Fable.Remoting.Giraffe = 5.14.0
     nuget Giraffe == 6.0.0
     nuget Saturn = 0.16.1
-    nuget Serilog.AspNetCore = 6.0.1
+    nuget Serilog.AspNetCore = 6.1.0
     nuget Serilog.Sinks.Console = 4.1.0
     nuget FSharp.Data.LiteralProviders = 1.0.3

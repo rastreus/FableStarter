@@ -5,6 +5,7 @@
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
     "ionide.ionide-fsharp",
+    "alfonsogarciacaro.vscode-template-fsharp-highlight",
     "ms-dotnettools.csharp",
     "editorconfig.editorconfig",
     "msjsdiag.debugger-for-chrome"
